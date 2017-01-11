@@ -28,7 +28,9 @@ class User extends CI_Controller {
 		$data=$this->user_model->user_exist($name,$pass);
 		if($data){
 			// $this->session->set_userdata($data);
-			redirect("welcome");
+			$this->load->view('template/header');
+			$this->load->view('sms/index');
+			// redirect("sms/index");
 		}else{
 			redirect("user");
 		}

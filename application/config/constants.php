@@ -12,7 +12,38 @@
 | user, PHP under CGI with Apache suEXEC, etc.).  Octal values should
 | always be used to set the mode correctly.
 |
+
 */
+
+
+define('FILE_READ_MODE', 0644);
+define('FILE_WRITE_MODE', 0666);
+define('DIR_READ_MODE', 0755);
+define('DIR_WRITE_MODE', 0777);
+define('PAYU_IN_MODE', 'PRODUCTION');
+define('USERNAME','ccavijaypura@gmail.com');
+//username for transactionalsms
+define('SMSLIBUSERNAME','cca.vijayapura@gmail.com');
+define('PASSWORD','chanakya1234');
+//password for transactionalsms
+define('PASSWORD','chanakya123');
+define('SENDER','TXTLCL');
+//sender name for transactionalsms
+define('SMSLIBSENDER','CCAVIJ');
+define('HOST','http://api.textlocal.in/send/?');
+define("USERHASH","a7e38699d55466375b6957a94c5c1b0e28133815");
+//Hash for transactionalsms
+define("SMSLIBHASH","51b26ec40fa54ad23e743fee99afe15bb6dabaae");
+define('SUCESSCODE','200');
+define('DB_DATABASE','chanakya_admin');
+define('DB_USERNAME','root');
+define('DB_PASSWORD','pass');
+/*define('USERNAME','northernsoft');
+define('PASSWORD','northern1234');
+define('SENDERNAME','Northernsoft');
+define('HOST','http://smslane.com/vendorsms/pushsms.aspx?');
+define('SUCESSCODE','200');*/
+
 define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
