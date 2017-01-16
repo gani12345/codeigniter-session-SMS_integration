@@ -35,7 +35,7 @@ define("USERHASH","a7e38699d55466375b6957a94c5c1b0e28133815");
 //Hash for transactionalsms
 define("SMSLIBHASH","51b26ec40fa54ad23e743fee99afe15bb6dabaae");
 define('SUCESSCODE','200');
-define('DB_DATABASE','chanakya_admin');
+define('DB_DATABASE','ganesh');
 define('DB_USERNAME','root');
 define('DB_PASSWORD','pass');
 /*define('USERNAME','northernsoft');

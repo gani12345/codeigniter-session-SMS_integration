@@ -5,7 +5,7 @@ class Sms extends CI_Controller{
 	$this->load->library('Session');
     $this->load->helper('string');
     $this->load->library('sms_lib');
-    // $this->load->library('backgroundhelper');
+    $this->load->library('backgroundhelper');
     // $this->load->library('form_validation');
     header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
     header("Pragma: no-cache"); // HTTP 1.0.
@@ -18,6 +18,7 @@ class Sms extends CI_Controller{
 	    $smsmessage = $this->input->post('msg');
 	    $contact = $this->input->post('contact');
 
+	    $date=date( 'Y-m-d H:i:s');
 	  
 	     $sms_length=strlen($smsmessage);
 	      if($sms_length < 160){
@@ -30,8 +31,8 @@ class Sms extends CI_Controller{
 	        $count =4;
 	      }
 	     
-	        $smsapi=$this->sms_lib->create_sms($smsmessage,$contact,$count); 
-	        // $this->backgroundhelper->createsms_background($smsmessage,array($contact),$date,$count);
+	        // $smsapi=$this->sms_lib->create_sms($smsmessage,$contact,$count); 
+	        $this->backgroundhelper->createsms_background($smsmessage,array($contact),$date,$count);
 	       	$this->load->view('template/header');
 			$this->load->view('sms/index');
 	      }else{

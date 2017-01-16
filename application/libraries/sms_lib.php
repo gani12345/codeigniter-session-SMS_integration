@@ -13,9 +13,9 @@ class Sms_lib{
 
 
  function   __construct(){
-  $this->username=SMSLIBUSERNAME;
-  $this->hash=SMSLIBHASH;
-  $this->sender="CCAVIJ";
+  $this->username="ccavijaypura@gmail.com";
+  $this->hash="a7e38699d55466375b6957a94c5c1b0e28133815";
+  $this->sender="TXTLCL";
   $this->host_url=HOST;
   $this->success_code=SUCESSCODE;
  }
@@ -38,26 +38,26 @@ class Sms_lib{
   curl_close($ch);
   
   if (strpos($header,'200 OK') !== false) {
-   // $data=$this->create_sms_log($numbers,$message,date( 'Y-m-d H:i:s'),1,$count);
-   // return $data;
+   $data=$this->create_sms_log($numbers,$message,date( 'Y-m-d H:i:s'),1,$count);
+   return $data;
    log_message("info","Inserted...");
   }  
 
-  // return $sms_api;
+  return $sms_api;
  }
 
-// public function create_sms_log($numbers,$message,$date,$user_id,$count){
-//   $this->CI =& get_instance();
-//   $this->CI->load->model('smsdj_model');
-//   $sms_log=array( "contact" => $numbers,
-//                   "sent_msg" =>urldecode($message),
-//                   "sent_at"=>$date,
-//                   "user_id"=>$user_id,
-//                   "count"=>$count);
-//   $msg=$this->CI->smsdj_model->save_sms_data($sms_log);
-//   log_message('infooo',"saveddd...".json_encode($msg));
-//   return 0;
-// }
+public function create_sms_log($numbers,$message,$date,$user_id,$count){
+  $this->CI =& get_instance();
+  $this->CI->load->model('smsdj_model');
+  $sms_log=array( "contact" => $numbers,
+                  "sent_msg" =>urldecode($message),
+                  "sent_at"=>$date,
+                  "user_id"=>$user_id,
+                  "count"=>$count);
+  $msg=$this->CI->smsdj_model->save_sms_data($sms_log);
+  log_message('infooo',"saveddd...".json_encode($msg));
+  return 0;
+}
 
 
 
